@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+	<div class="app">
+		<div id="main" class="grid-container">
+			<div class="left grid-item">
+			</div>
+			<div class="right grid-item">
+				<div id="controls">
+					<button>Play</button>
+					<button>Pause</button>
+					Speed: <input type="range" min="0" max="1000" value="100">
+					1.0
+				</div>
+				Velocity Config
+				<br/>
+				Thresholds <button>+</button>
+				<br/>
+				{% for br in breaks %}
+				<div class="threshold-item">
+					Clip: <input type="text" size="1"> Start: <input type="text" size="1"> End: <input type="text" size="1"> <button>Save</button> <button>Delete</button>
+				</div>
+				<br/>
+				{% endfor %}
+				<input type="text">
+				<button>Save</button>
+				<button>Load</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

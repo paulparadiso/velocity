@@ -1,0 +1,1 @@
+{"mode": "OBD", "clips": [{"id": 0, "num": 1}], "arena": {"master_instance": 0, "arena_instances": [{"id": 0, "ip": "127.0.0.1", "arena_version": "6"}]}, "velocity": {"params": [], "breaks": [{"id": 0, "clip": 1, "start": 1, "stop": 10}, {"id": 1, "clip": 2, "start": 11, "stop": 20}, {"id": 2, "clip": 3, "start": 21, "stop": 30}, {"id": 3, "clip": 4, "start": 31, "stop": 40}]}}

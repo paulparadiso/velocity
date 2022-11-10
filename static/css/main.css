@@ -1,0 +1,207 @@
+@tailwind preflight;
+
+/* Here we can add any custom overrides */
+
+@tailwind utilities;
+
+/* Here we can add our own utilities or custom CSS */
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+body{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	/* background-color: #343a40; */
+	color: black;
+}
+
+.app{
+	width: 100%;
+	height: 100%;
+}
+
+#main{
+	/*max-width: 768px;*/
+	max-width: 1000px;
+	height: 2000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.main-container{
+	max-width: 800px;
+}
+
+.grid-container{
+	display: grid;
+	grid-column-gap: 20px;
+	grid-template-columns: 25% 50% 25%;
+}
+
+.mode-display {
+	margin-top: 8px;
+}
+
+.mode-text {
+	float: left;
+	margin: 6px;
+	margin--right: 15px;
+	font-size: 1.1em;
+}
+
+.nav-container{
+	max-width: 768px;
+	margin-left:auto;
+	margin-right: auto;
+	display: grid;
+	grid-template-columns: 33.3% 33.3% 33.3%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+
+.nav-container a{
+	text-decoration: none;
+}
+
+.nav-item{
+	text-align: center;
+	border: 1px solid black;
+	margin-right: -1px;
+	background-color: white;
+}
+
+.grid-item{
+}
+
+.title{
+	border: 1px solid black;
+	margin-bottom: -1px;
+	margin-top: 10px;
+	
+	/*
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	*/
+}
+
+.threshold-item{
+	margin-bottom: -1px;
+	padding: 0.5rem;
+	border: 1px solid black;
+}
+
+.delete{
+	display: inline;
+}
+
+.right{
+}
+
+.config{
+	border: 1px solid black;
+	margin-bottom: -1px;
+	padding: 0.5rem;
+}
+
+.config-title{
+	border: 1px solid black;
+	/*
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	*/
+	margin-bottom: -1px;
+	margin-top: 10px;
+}
+
+.spacer{
+	width: 100%;
+	height: 100px;
+}
+
+.config-item{
+	padding: 10px;
+	margin-left: 10px;
+}
+
+.config-name{
+	width: 9vw;
+	display: inline-block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	vertical-align: middle;
+}
+
+.s-form{
+	display: inline;
+}
+
+.unsaved{
+	background-color: rgba(255, 0, 0, 0.5);
+}
+
+.thresh{
+	display: inline-block;
+	margin-left: 10px;
+	vertical-align: middle;
+}
+
+.add{
+	margin-left: 20px;
+}
+
+.c-form{
+	display: inline;
+}
+
+.v-button{
+	vertical-align: baseline;
+}
+
+.save{
+	border: 1px solid black;
+	
+	/*
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	*/
+}
+
+.save-container{
+	padding: 0.5rem;
+	margin-left: 1px;
+}
+
+.range{
+	vertical-align: middle;
+	width: 75%;
+}
+
+#speed-output{
+	display: inline-block;
+}
+
+#speed-reset{
+	display: inline-block;
+}
+
+.master-checkbox {
+	display: inline-block !important;
+}
+
+.push-right {
+	float: right;
+}
+
+.add-margin {
+	margin: 0.5rem;
+}
+
+.form-group {
+	margin-bottom: 0 !important;
+}

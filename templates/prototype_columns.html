@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="/static/css/main.css">
+	<link rel="stylesheet" href="/static/css/pure-min.css">
+	<script src="/static/js/jquery.min.js"></script>
+	<script src="/static/js/main.js"></script>
+</head>
+<body>
+	<div class="app">
+		<div id="main" class="grid-container">
+			<div class="left grid-item">
+				<!--
+				<div class="config-title">
+					<h2 class="thresh">Arena Version</h2>
+					<form class="pure-form s-form" method="post" action='/set_arena_version'>
+						<select id='version-select'>
+							<option {% if version == "4" %} selected {% endif %}>4</option>
+							<option {% if version == "5" %} selected {% endif %}>5</option>
+							<option {% if version == "6" %} selected {% endif %}>6</option>
+						</select>
+					</form>
+				</div>
+				-->
+				<div class="config-title">
+					<h2 class="thresh">Configurations</h2>
+				</div>
+				{% for config in configs %}
+					<div class="config">
+						<form class="pure-form c-form" method="post" action="/load_config">
+							<div class="config-name"> {{ config }} </div>
+							<input type="hidden" name="config" value="{{ config }}" />
+							<input class="pure-button v-button" type="submit" value="load" />
+						</form>
+					</div>
+				{% endfor %}
+			</div>
+			<div class="middle grid-item">
+				<div class="title">
+					<h2 class="thresh">Thresholds</h2> 
+					<form class="pure-form s-form add" method="post" action='/add_break'>
+						<input class="delete pure-button" type="submit" value="Add" />
+					</form>
+				</div>
+				{% for br in breaks %}
+				<div class="threshold-item">
+					<form class="pure-form s-form" method="post" action="/update_break">
+						Clip: <input class="" type="text" size="1" name="clip" value="{{ br.clip }}"> 
+						Start: <input class="" type="text" size="1" name="start" value="{{ br.start }}">
+						End: <input class="" type="text" size="1" name="stop" value="{{ br.stop }}"> 
+						<input type="hidden" name="id" value="{{ br.id }}" />
+						<input class="update pure-button v-button" type="submit" value="Update" />
+					</form>
+					<form  class="pure-form s-form" method="post" action='/delete_break'>
+						<input type="hidden" name="break" value="{{ br.id }}" />
+						<input class="delete pure-button v-button" type="submit" value="Delete" />
+					</form>
+				</div>
+				{% endfor %}
+				<div class="save">
+					<div class="save-container">
+						<form class="pure-form s-form" method="post" action="/save_config">
+							<input type="text" name="config" {% if saved is sameas false %} class="unsaved" {% endif %} value="{{ current_config }}">
+							<input class="pure-button v-button" type="submit" value="Save" />
+						</form>
+						<form class="pure-form s-form" method="post" action="/new_config">
+							<input class="pure-button v-button" type="submit" value="New" />
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="right grid-item">
+				<div class="config-title">
+					<h2 class="thresh">Live Control</h2>
+				</div>
+				<div class="threshold-item">
+					<form class="pure-form s-form" method="post" action="/play">
+						<input class="pure-button v-button" type="submit" value="&#9655;" />
+					</form>
+					<form class="pure-form s-form" method="post" action="/pause">
+						<input class="pure-button v-button" type="submit" value="&#9647;&#9647;" />
+					</form>
+				</div>
+				<div class="threshold-item">
+					<div id="speed-reset"> Playback Speed: 
+						<button class="pure-button">Reset</button>
+						</div><input class="range" id="speed-range" type="range" min="0" max="1000" value="100" step=1 />
+					<div id="speed-output">1.0</div>
+				</div>
+				<div class="threshold-item">
+					Vehicle Speed:
+					<h1 id="mph">00</h1>mph
+				</div>
+				<div class="threshold-item">
+					Current Clip:
+					<h1 id="clip">1</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
